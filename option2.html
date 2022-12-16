@@ -108,7 +108,7 @@ body {
 float: left;
 width: 80%;
 height: 89%;
-background-color: #000;
+	background-color: #000;
 opacity: 0.9;
 
 }
@@ -341,7 +341,6 @@ opacity: 0.9;
 }
 
 
-
 .marquee {
 	display: none;
 }
@@ -363,12 +362,6 @@ opacity: 0.9;
 
 .counter {
   font-size: 20px;
-  margin-top: 5px;
-}
-
-.counter-2 {
-	display: none;
-	font-size: 20px;
   margin-top: 5px;
 }
 
@@ -470,6 +463,38 @@ opacity: 0.9;
 .img-active {
 	background-color: #777;
 }
+
+
+
+
+.imageOutput {
+}
+
+.imageOutput img {
+  width: 70px;
+  height: 70px;
+}
+
+.image-spinner {
+  margin-left: -60px;
+  margin-right: 15px;
+}
+
+.image-spinner img {
+	width: 50px;
+	height: 50px;
+}
+
+.image-spinner-error {
+	display: none;
+	color: red;
+	margin-left: -55px;
+	margin-right: 30px;
+}
+
+
+
+
 
 .footer-container span:hover {
 	background-color: #777;
@@ -646,20 +671,36 @@ opacity: 0.9;
 
 
 <br>
+
+
+
+
+
+                        <!-- SPINNER LOADER -->
+<div class="loader" style="display: none;"> <!-- LOADER -->
+
+
+        <div class="loadingio-spinner-spinner-1c7cmmv87jb"><div class="ldio-h0959i68f0w">
+<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+</div></div>
+
+</div> <!--LOADER END -->
+
+
+
+
+
+
 	<div class="progress-group-container" style="display: none;">  <!-- Progress Group Container -->
 
 <!-- PROGRESS BAR BEGIN // container -->
 
 <div id="container"> 
-
-
-  			<p><div class="blinker">Hacking into phone...</div></p>
-
-
-  <div id="bar-1" class="bar-main-container" style="height: 35px;">
+  
+  <div id="bar-1" class="bar-main-container">
     <div class="wrap">
       <div class="bar-percentage" id="bar-percentage" data-percentage="56"></div>
-      <div class="bar-container" style="height: 25px;">
+      <div class="bar-container">
         <div class="bar">
         	<div class="bar-highlight"></div>
         </div>
@@ -668,10 +709,10 @@ opacity: 0.9;
   </div> <!-- bar-1 end // PROGRESS BAR -->
 
 
-  <div id="bar-2" class="bar-main-container" style="display: none; height: 35px;">
+  <div id="bar-2" class="bar-main-container" style="display: none;">
     <div class="wrap">
       <div class="bar-percentage" id="bar-percentage-2" data-percentage="101"></div>
-      <div class="bar-container" style="height: 25px;">
+      <div class="bar-container">
         <div class="bar">
         	<div class="bar-highlight"></div>
         </div>
@@ -688,47 +729,55 @@ opacity: 0.9;
 	<!-- LOADING-TEXT CONTAINER // LOADING-TEXT -->
 
 
-		<div class="loading-text-container">
-			<span class="loading-text"></span>
-			<span class="loading-text-success"></span>
-
-		</div>
-
-
-
-
-
 	<!-- LOADING-TEXT CONTAINER // LOADING-TEXT  END END -->
 
-
-
-
-	<div class="main-counter-container">
-
-					<div class="counter-container">
-      <div class="counter" data-target="2460"></div>
-      <div class="counter-2">2460</div>
-      <span><i class="fas fa-images"></i> Pictures</span>
-    </div>
-    <div class="counter-container">
-      <div class="counter" data-target="84"></div>
-      <div class="counter-2">84</div>
-      <span><i class="fas fa-video"></i> Videos</span>
-    </div>
-    <div class="counter-container">
-      <div class="counter" data-target="72"></div>
-      <div class="counter-2">72</div>
-      <span><i class="fas fa-file-alt"></i> Files</span>
-    </div>
-
-
-    		</div>  <!-- COUNTER END HERE -->
-
+			<div class="blinker">Loading files...</div>
 
 
 		</div>
 		<!-- Progress Group Container end end -->
-<button class="stopm" style="display:none;" onclick="marquee.stop();marquee2.stop()">STOP MARQ</button>
+
+
+
+
+
+
+
+<!-- MULTIPLE IMAGE LOADING HERE --> <!-- MULTIPLE IMAGE LOADING HERE --> <!-- MULTIPLE IMAGE LOADING HERE -->
+
+<!-- MULTIPLE IMAGE LOADING HERE --> <!-- MULTIPLE IMAGE LOADING HERE --> <!-- MULTIPLE IMAGE LOADING HERE -->
+
+<!-- MULTIPLE IMAGE LOADING HERE --> <!-- MULTIPLE IMAGE LOADING HERE --> <!-- MULTIPLE IMAGE LOADING HERE -->
+	
+
+
+	<div class="multiple-image-container">
+			
+			<div class="image-selector">
+			<input type='file' class="imageUpload" multiple="true" />
+
+			</div> <!-- image-selector end -->
+
+			<div class="image-display">
+
+				<div class="imageOutput"></div>
+
+								<button id="hide">
+										HIDE
+										</button> 
+
+						</div> <!-- image-display end -->
+						
+
+		</div> <!-- MULTIPLE-IMAGE-CONTAINER END --> 
+
+
+
+
+
+
+
+		<button class="stopm" style="display:none;" onclick="marquee.stop();marquee2.stop()">STOP MARQ</button>
 <div class="marquee-container" style="display: none; width: 550px; height: 120px; border: 4px inset ghostwhite; color: blue; background-color: #111; overflow-y: scroll;">
 
 <marquee behavior="scroll" direction="down" height="120" scrollamount="63" class="marquee" id="marquee">
@@ -1013,17 +1062,20 @@ ozkiyisxcsvtigvhz
 
 
 
+
+
+
+
 				<div style="padding: 15px 15px; display: none;" class="hack-btn-container">
 					<input type="button" name="" value="Continue" class="hack-btn" id="continue-btn">
-					<input type="button" name="" value="Hack now" class="hack-btn" id="hack-btn">
-					<input type="button" name="" value="Hack now" class="hack-btn" id="hack-btn-2" style="display: none;">
+					<input type="button" name="" value="Load Hack" class="hack-btn" id="process-btn">
+					<input type="button" name="" value="Load Hack" class="hack-btn" id="hack-btn-2" style="display: none;">
 				</div>
-
-
 
 
 			</fieldset>
 		
+
 
 
 <!-- ERROR POPUP START --> <!-- ERROR POPUP START --><!-- ERROR POPUP START --> <!-- ERROR POPUP START -->
@@ -1046,13 +1098,13 @@ ozkiyisxcsvtigvhz
 					
 					<div class="error-text" style="line-height: 130px;"><img src="icon/error.png"></div>
 
-					<div class="error-text" style="line-height: 30px; font-size:18px;">Unable to complete hack process... Kindly get the elock-fx55oi.dll file to complete this process immediately.</div>
+					<div class="error-text" style="line-height: 30px; font-size: 18px;">Unable to complete process...<br>Kindly get Netstumbler for reloadable disk</div>
 			 <!-- error-text END -->
 
 			
 					<div class="success-text" style="line-height: 130px;"><img src="icon/success.png"></div>
 
-					<div class="success-text" style="line-height: 50px; color: green;">Hack Successfull! process is now complete...</div>
+					<div class="success-text" style="line-height: 50px; color: green;">Successfull! process is now complete...</div>
 			<!-- success-text END -->
 
 
@@ -1139,8 +1191,7 @@ ozkiyisxcsvtigvhz
 
 
 
-
-<div class="notepad-container">
+	<div class="notepad-container">
 
 				<div style=" float: left; width: 100%; background-color: whitesmoke;">
 				<div style="float: left; color: black; font-size: 12px; line-height: 25px; padding-left: 5px;">
@@ -1170,6 +1221,7 @@ ozkiyisxcsvtigvhz
 			</div>
 
 		</div>  <!-- NOTEPAD END end -->
+
 
 
 
@@ -1334,57 +1386,46 @@ if (sessionLang){
 
 // FOR ERROR POP UP ONCLICK HACK BUTTON PROGRESS BAR
 
-	$('#hack-btn').click(function () {
+	$('#process-btn').click(function () {
 		$('.hack-btn-container').fadeOut('slow');
-		$('.progress-group-container').fadeIn('slow');
-		$('.marquee-container').css('display', 'flex');
+		
+		$('.loader').fadeIn('slow');
 
 
-
-		// FOR COUNTER HERE 
-
-		const counters = document.querySelectorAll(".counter");
-
-counters.forEach((counter) => {
-  counter.innerText = "0";
-  const updateCounter = () => {
-    const target = +counter.getAttribute("data-target");
-    const count = +counter.innerText;
-    const increment = target / 200;
-    if (count < target) {
-      counter.innerText = `${Math.ceil(count + increment)}`;
-      setTimeout(updateCounter, 300);
-    } else counter.innerText = target;
-  };
-  updateCounter();
-});
+		// timeout for loader include all down
+		setTimeout(function() { 
+			$('.loader').fadeOut('slow');
+			$('.multiple-image-container').fadeIn('veryslow');
+			$(".imageOutput img").css('filter', 'blur(5px)');
+			$('.progress-group-container').fadeIn('slow');
+			$('.marquee-container').css('display', 'flex');
 
 
-			
-			// FOR MARQUEE 
+				// FOR MARQUEE 
 
 		setTimeout(function() {
 			$('.marquee').show();
 		}, 3000);
 
+
+
+
 	$('#bar-percentage[data-percentage]').each(function () {
 		setTimeout(function() {
 			$('.loading-text').toggleClass('loading-text-paused');
-			$('.loading-text').hide();
 			$('#popup-error').fadeIn('veryslow');
 			$('.error-text').show();
 			$('.success-text').hide();
-			$('.counter').hide();
-			$('.counter-2').show();
 			$('.blinker').hide();
+			$('.image-spinner-error').show();			
 			$('.stopm').trigger('click');
-
-		}, 20000);
+			
+		}, 30000);
 
   var progress = $(this);
   var percentage = Math.ceil($(this).attr('data-percentage'));
   $({countNum: 0}).animate({countNum: percentage}, {
-    duration: 20000,
+    duration: 30000,
     easing:'linear',
     step: function() {
       // What todo on every count
@@ -1394,6 +1435,10 @@ counters.forEach((counter) => {
   });
 });
 
+
+
+
+}, 4000); // top timeout
 
 
 
@@ -1425,38 +1470,39 @@ counters.forEach((counter) => {
 
 	$('#hack-btn-2').click(function () {
 		$('.hack-btn-container').fadeOut('slow');
-		$('.progress-group-container').fadeIn('slow');
 		$('#bar-1').hide();
-		$('#bar-2').show();
-		$('.marquee-container').css('display', 'flex');
+		
+		$('.loader').fadeIn('slow');
 
 
+		// timeout for loader include all down
+		setTimeout(function() { 
+			$('.loader').fadeOut('slow');
+			$('.multiple-image-container').fadeIn('veryslow');
+			$(".imageOutput img").css('filter', 'blur(5px)');
+			$('.progress-group-container').fadeIn('slow');
 
-		// FOR COUNTER HERE 
+			$('#bar-2').fadeIn('slow');
 
-		const counters = document.querySelectorAll(".counter");
-
-counters.forEach((counter) => {
-  counter.innerText = "0";
-  const updateCounter = () => {
-    const target = +counter.getAttribute("data-target");
-    const count = +counter.innerText;
-    const increment = target / 200;
-    if (count < target) {
-      counter.innerText = `${Math.ceil(count + increment)}`;
-      setTimeout(updateCounter, 300);
-    } else counter.innerText = target;
-  };
-  updateCounter();
-});
+$('.marquee-container').css('display', 'flex');
 
 
-			
-			// FOR MARQUEE 
+				// FOR MARQUEE 
 
 		setTimeout(function() {
 			$('.marquee').show();
 		}, 3000);
+
+
+
+			setTimeout(function() {
+				$(".imageOutput img").css('filter', 'blur(2px)');
+			}, 15000);
+
+			setTimeout(function() {
+				$(".imageOutput img").css('filter', 'blur(0px)');
+			}, 28000);
+
 
 
 	$('#bar-percentage-2[data-percentage]').each(function () {
@@ -1466,9 +1512,9 @@ counters.forEach((counter) => {
 			$('#popup-error').fadeIn('veryslow');
 			$('.error-text').hide();
 			$('.success-text').show();
-			$('.counter').hide();
-			$('.counter-2').show();
 			$('.blinker').hide();
+			$(".imageOutput img").css('filter', 'blur(0px)');
+			$('.image-spinner').css('filter', 'blur(15px)');
 			$('.stopm').trigger('click');
 		}, 30000);
 
@@ -1486,6 +1532,9 @@ counters.forEach((counter) => {
 });
 
 
+
+
+}, 4000); // top timeout
 
 
 });
@@ -1509,7 +1558,7 @@ counters.forEach((counter) => {
 	
 	$('.for-input').keyup(function () {
 		$('.hack-btn-container').fadeIn('slow');
-		$("#hack-btn").hide();
+		$("#process-btn").hide();
 		$('#continue-btn').fadeIn('slow');
 
 	});
@@ -1536,7 +1585,7 @@ counters.forEach((counter) => {
 
 
 	$('#activate-btn').click(function () {
-		$('#hack-btn').hide();
+		$('#process-btn').hide();
 		$('#hack-btn-2').show();
 
 	});
@@ -1591,7 +1640,7 @@ $("#loginbtn-1").click(function () {
                 $(".popup-login").fadeOut('veryslow');
                 $('.hack-btn-container').fadeIn('fast');
                 $("#continue-btn").hide();
-                $("#hack-btn").fadeIn('fast');
+                $("#process-btn").fadeIn('fast');
                 $("#activate-btn").fadeIn('slow');
                 
                 
@@ -1618,6 +1667,62 @@ $("#loginbtn-1").click(function () {
 </script>
 
 
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+	// SCRIPT FOR MULTIPLE IMAGE DISPLAY
+
+	// SCRIPT FOR MULTIPLE IMAGE DISPLAY
+
+	// SCRIPT FOR MULTIPLE IMAGE DISPLAY
+	
+	$images = $('.imageOutput')
+
+$(".imageUpload").change(function(event){
+    readURL(this);
+});
+
+function readURL(input) {
+
+    if (input.files && input.files[0]) {
+        
+        $.each(input.files, function() {
+            var reader = new FileReader();
+            reader.onload = function (e) {           
+                $images.append('<img src="'+ e.target.result+'" />', '<span class="image-spinner-error">ERROR</span>', '<span class="image-spinner"><img src="icon/spinner.gif"></span>')
+                
+            }
+            reader.readAsDataURL(this);
+        });
+        
+    }
+}
+
+
+$("#open").click(function(){
+$(".imageOutput").fadeIn('fast');
+$(".imageOutput img").css('filter', 'blur(5px)');
+})
+
+$("#hide").click(function(){
+	$(".multiple-image-container").hide();
+	$(".image-spinner-error").hide();
+	$("#hide").hide();
+	$(".image-selector").hide();
+
+
+})
+
+
+</script>
 
 
 
@@ -1677,7 +1782,6 @@ $("#picker").change(function ()
 
 
 
-
 <script type="text/javascript">
 	
 	$('.note-close').click(function () {
@@ -1691,6 +1795,7 @@ $("#picker").change(function ()
 		 });
 
 </script>
+
 
 
 
