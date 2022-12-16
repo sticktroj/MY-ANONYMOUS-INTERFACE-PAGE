@@ -1,0 +1,349 @@
+
+.vodiapicker{
+  display: none; 
+
+}
+
+#a{
+  padding-left: 0px;
+}
+
+#a img, .btn-select img{
+  width: 25px;
+  vertical-align: middle;
+}
+
+#a li{
+  list-style: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+
+#a li:hover{
+ background-color: #F4F3F3;
+}
+
+#a li img{
+  margin: 4px 5px;
+}
+
+#a li span, .btn-select li span{
+  margin-left: 20px;
+}
+
+/* item list */
+
+.b{
+  position: absolute;
+  display: none;
+  width: 150px;
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 5px;
+  background-color: skyblue;
+  text-align: left;
+  
+}
+
+.open{
+  display: show !important;
+}
+
+
+
+.btn-select{
+  position: relative;
+  margin-top: 10px;
+  width: 150px;
+  height: 34px;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+
+}
+.btn-select li{
+  list-style: none;
+  float: left;
+  padding-bottom: 0px;
+}
+
+.btn-select:hover li{
+  margin-left: 0px;
+}
+
+.btn-select:hover{
+  background-color: #F4F3F3;
+  border: 1px solid transparent;
+  box-shadow: inset 0 0px 0px 1px #ccc;
+  
+  
+}
+
+.btn-select:focus{
+   outline:none;
+}
+
+.lang-select{
+  margin-left: 10px;
+
+}
+
+.selector-div {
+  display: inline-block;
+  height: 40px;
+}
+
+.for-input {
+  width: 200px;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 9px 10px;
+  padding-bottom: 5px;
+  height: 18px;
+  line-height: 20px;
+  margin-left: -8px;
+}
+
+
+
+
+
+/*  PROGRESS BAR CSS CODE */
+
+/*  PROGRESS BAR CSS CODE */
+
+#container { text-align: center; margin: 30px 0px 0px 0px; }
+
+.progress-group-container {
+  margin-top: -35px;
+}
+
+
+.bar-main-container {
+  margin: 0px auto;
+  width: 300px;
+  height: 20px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 0.8em;
+  color: darkgreen;
+}
+
+.wrap { padding: 0px 8px; }
+
+.bar-percentage {
+  float: left;
+  background: rgba(0,0,0,0.13);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 9px 0px;
+  width: 18%;
+  height: 16px;
+}
+
+.bar-container {
+  float: right;
+  width: 78%;
+  height: 12px;
+  background-image: linear-gradient(to bottom, #adabc4, transparent, #adabc4, #adabc4, #807e91);
+  border-radius: 3px;
+  border:1px solid #807e91;
+  margin: 5px 0px;
+  overflow: hidden;
+}
+
+.bar {
+  float: left;
+  height: 100%;
+  background-color: #02b525;
+  border-radius: 3px 0px 0px 3px;
+}
+
+
+.bar-highlight {
+  width: 20px;
+  height: 100%;
+  position: relative;
+  background-color: white;
+  opacity: 0.3;
+  filter: blur(5px);
+  animation: linear infinite;
+  animation-name: run;
+  animation-duration: 2s;
+}
+
+
+@-webkit-keyframes run {
+    from{
+      left: -10%;
+
+    }
+    to {
+      left: 85%;
+
+    }
+}
+
+
+
+/*  LOADING TEXT CSS CODE */
+
+
+.loading-text-container {
+  margin: 0px auto;
+  padding: 10px 2px;
+
+  background-color: black;
+  width: 260px;
+  border: outset;
+}
+
+
+.loading-text {
+  color:red;
+
+}
+
+.loading-text:after {
+  content:"";
+  animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+  0% { content:"Connecting..."; }
+  5% { content:"Loading..."; }
+  10% { content:"Loading hack files..."; }
+  15% { content:"Installing hack files..."; }
+  20% { content:"Initializing..."; }
+  25% { content: "Autorizing access code..."; }
+  30% { content: "Bypass protocol..."; }
+  32% { content: "Connecting with server..."; }
+  35% { content: "Processing logs..."; }
+  40% { content: "Bruteforce robot xv553gs,#-i^g2..."; }
+  43% { content: "Bruteforce robot xv43290kc,#-s^f2..."; }
+  45% { content: "robot access ub027553io,#-j^d3..."; }
+  50% { content: "robot ub027553io,#-j^d3..."; }
+  53% { content: "Hacking,&#-k^903..."; }
+  55% { content: "Hacking,&#-k^903..."; }
+  60% { content: "Hacking,&#-k^903.."; }
+  65% { content: "Processing logs..."; }
+  70% { content: "accessing logs..."; }
+  75% { content: "accessing logs..."; }
+  80% { content: "Processing logs..."; }
+  82% { content: "Bruteforce robot xv43290kc,#-s^f2..."; }
+  85% { content: "Hacking."; }
+  88% { content: "Hacking.."; }
+  90% { content: "Hacking..."; }
+  92% { content: "Updating hack files..."; }
+  94% { content: "Generating codes..."; }
+  95% { content: "Importing codes..."; }
+  96% { content: "Finalising hack process..."; }
+  97% { content: "Finalising hack process..."; }
+
+}
+
+
+
+.loading-text.loading-text-paused:after {
+  animation-play-state: paused;
+}
+
+
+
+
+
+
+
+
+
+
+/*  ERROR POPUP CSS CODE */
+
+.popup-error {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    background-color: #00808070;
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    z-index: 2147483647;
+    overflow: hidden;
+    cursor: help;
+}
+
+.popup-error-container {
+  margin-left: 160px;
+    background-image: linear-gradient(to bottom right, #456EC5, #789EF0, #294889);
+    width: 350px;
+    height: 130px;
+    border: 1px solid black;
+    padding: 4px 3px;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    overflow: hidden;
+       
+
+}
+
+.popup-error .inner-error {
+  
+    background-color: white;
+    
+    width: 100%;
+    height: 82%;
+    color: #D8000C;
+      background-color: #D3D1EA;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+
+    opacity: 0.96;
+    box-shadow: 10px 20px 40px 7px #FFCCBA; inset;
+
+
+}
+
+
+.error-close {
+  width: 40px;
+  height: 25px;
+  background-color: red;
+  display: inline-block;
+  text-align: center;
+  line-height: 25px;
+}
+
+.error-close:hover {
+  background-color: darkred;
+  cursor: pointer;
+}
+
+
+
+
+.blinker {
+  animation: blinker 1s step-end infinite;
+  color: red;
+  font-weight: bold;
+
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+
+
